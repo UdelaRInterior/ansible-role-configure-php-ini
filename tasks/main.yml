@@ -1,0 +1,9 @@
+---
+# tasks file for ansible-role-configure-php-ini
+
+- name: Configure php.ini file
+  lineinfile:
+    path: "{{ php_ini_path }}"
+    regexp: "{{ item.parameter }} ="
+    line: "{{ item.parameter }} = {{ item.value }}"
+  with_items: "{{ php_ini_parameters_and_values }}"

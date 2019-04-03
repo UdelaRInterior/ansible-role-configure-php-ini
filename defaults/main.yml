@@ -1,0 +1,13 @@
+---
+# defaults file for ansible-role-configure-php-ini
+
+# Full path to php.ini file
+php_ini_path: /etc/php/7.0/cli/php.ini
+
+# List of PHP parameter to configure
+php_ini_parameters_and_values:
+  - parameter: post_max_size
+    value: 2G
+  - parameter: upload_max_filesize
+    value: 2G
+
