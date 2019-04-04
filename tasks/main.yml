@@ -7,3 +7,5 @@
     regexp: "{{ item.parameter }} ="
     line: "{{ item.parameter }} = {{ item.value }}"
   with_items: "{{ php_ini_parameters_and_values }}"
+  notify:
+    - reload apache2
