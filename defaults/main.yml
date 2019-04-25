@@ -10,5 +10,11 @@ php_ini_parameters_and_values:
     value: 1G
   - parameter: upload_max_filesize
     value: 1G
+  - parameter: max_execution_time
+    value: 90
+  - parameter: max_input_time
+    value: 90
+  - parameter: memory_limit
+    value: 256M
   - parameter: date.timezone
     value: '"America/Montevideo"'
