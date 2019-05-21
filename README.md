@@ -12,15 +12,35 @@ Role Variables
 --------------
 
 ```yaml
-# Full path to php.ini file
-php_ini_path: /etc/php/7.0/cli/php.ini
+# Full path to cli/php.ini file
+cli_php_ini_path: /etc/php/7.0/cli/php.ini
 
-# List of PHP parameter to configure
-php_ini_parameters_and_values:
+# List of CLI PHP parameters to configure
+cli_php_ini_parameters_and_values:
   - parameter: post_max_size
-    value: 2G
+    value: 1G
   - parameter: upload_max_filesize
-    value: 2G
+    value: 1G
+  - parameter: max_execution_time
+    value: 90
+  - parameter: max_input_time
+    value: 90
+  - parameter: memory_limit
+    value: 256M
+  - parameter: date.timezone
+    value: '"America/Montevideo"'
+
+# Full path to apache2/php.ini file
+apache_php_ini_path: /etc/php/7.0/apache2/php.ini
+
+# List of APACHE PHP parameters to configure
+apache_php_ini_parameters_and_values:
+  - parameter: post_max_size
+    value: 256M
+  - parameter: upload_max_filesize
+    value: 256M
+  - parameter: date.timezone
+    value: '"America/Montevideo"'
 ```
 
 Dependencies
