@@ -1,7 +1,7 @@
-ansible-role-configure-php-ini
+Ansible role configure_php_ini
 =========
 
-Ansible role to configure php.ini file of our server in acordance to the listed on php_ini_parameters_and_values
+Ansible role to configure php.ini file of our Apache server in acordance to the listed on php_ini_parameters_and_values
 
 Requirements
 ------------
@@ -54,7 +54,18 @@ Example Playbook
 ```yaml
 - hosts: servers_lamp
   roles:
-     - ansible-role-configure-php-ini
+    - role: configure_php_ini
+      cli_php_ini_parameters_and_values:
+        - parameter: max_execution_time
+          value: 90
+        - parameter: max_input_time
+          value: 90
+      apache_php_ini_parameters_and_values:
+        - parameter: post_max_size
+          value: 256M
+        - parameter: upload_max_filesize
+          value: 256M
+
 ```
 
 License
@@ -66,6 +77,6 @@ licenced under GPL-v3
 Author Information
 ------------------
 
-[santiagomr](https://github.com/santiagomr)
-https://github.com/UdelaRInterior
+[@santiagomr](https://github.com/santiagomr)
+[@UdelaRInterior](https://github.com/UdelaRInterior)
 https://proyectos.interior.edu.uy/
