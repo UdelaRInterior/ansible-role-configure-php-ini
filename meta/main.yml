@@ -1,7 +1,7 @@
 galaxy_info:
   role_name: configure_php_ini
   author:
-    - 'Santiago Martínez (@santiagomr)'
+  - 'Santiago Martínez (@santiagomr)'
   description: Ansible role to configure php.ini files on Debian servers
   company: Red Unidades Informáticas UdelaR Interior (@UdelaRInterior)
 
@@ -10,16 +10,19 @@ galaxy_info:
   min_ansible_version: 2.3
 
   platforms:
-    - name: Debian
-      versions:
-        - stretch
+  - name: Debian
+    versions:
+    - stretch
+    - buster
 
   galaxy_tags:
-    - system
-    - web
-    - apache
-    - php
-    - debian
-    - sysadmin
+  - system
+  - web
+  - apache
+  - php
+  - debian
+  - sysadmin
 
 dependencies: []
+
+...

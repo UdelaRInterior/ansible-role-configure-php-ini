@@ -1,6 +1,9 @@
 ---
 # tasks file for ansible-role-configure-php-ini
 
+- name: Include variables dependind on debian version 
+  include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml"
+
 - name: Configure cli/php.ini file
   lineinfile:
     path: "{{ cli_php_ini_path }}"
@@ -9,7 +12,7 @@
     backup: yes
   with_items: "{{ cli_php_ini_parameters_and_values }}"
   notify:
-    - reload apache2
+  - reload apache2
 
 
 - name: Configure apache2/php.ini file
@@ -20,4 +23,4 @@
     backup: yes
   with_items: "{{ apache_php_ini_parameters_and_values }}"
   notify:
-    - reload apache2
+  - reload apache2
